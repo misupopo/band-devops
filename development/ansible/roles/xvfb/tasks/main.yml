@@ -1,0 +1,28 @@
+
+- name: Add google key
+  apt_key:
+    url: "https://dl-ssl.google.com/linux/linux_signing_key.pub"
+    state: present
+
+- name: Add repository
+  apt_repository:
+    repo: deb http://dl.google.com/linux/chrome/deb/ stable main
+    state: present
+    filename: 'google-chrome'
+
+- name: Install packages
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  with_items:
+    - build-essential
+    - google-chrome-stable
+    - openjdk-9-jre
+
+- name: Install xvfb and firefox
+  apt: pkg={{item}} state=latest
+  with_items:
+    - xvfb
+    - firefox
+

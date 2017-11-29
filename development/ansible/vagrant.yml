@@ -1,0 +1,11 @@
+- hosts: all
+  become: no
+  become_user: ubuntu
+  roles:
+    - common
+    - node
+
+- hosts: all
+  become: yes
+  roles:
+    - mongodb
