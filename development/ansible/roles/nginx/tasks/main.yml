@@ -1,0 +1,16 @@
+- name: Update apt cache
+  raw: sudo apt-get -qq update
+
+- name: Install nginx
+  apt: pkg={{item}} state=latest
+  with_items:
+    - nginx
+
+- name: Copy nginx.conf file
+  copy: src=nginx.conf dest=/etc/nginx/nginx.conf backup=yes
+
+- name: Copy nginx.conf file
+  copy: src=band-static.conf dest=/etc/nginx/conf.d/band-static.conf
+
+- name: restart nginx
+  service: name=nginx state=restarted
