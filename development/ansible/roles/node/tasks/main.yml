@@ -16,4 +16,7 @@
 - name: install chromedriver
   shell: bash -lc "npm install -g chromedriver"
 
+- name: Install global pm2
+  shell: bash -lc "npm install -g pm2"
+
 
