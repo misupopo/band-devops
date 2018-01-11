@@ -9,8 +9,11 @@
 - name: Copy nginx.conf file
   copy: src=nginx.conf dest=/etc/nginx/nginx.conf backup=yes
 
-- name: Copy nginx.conf file
+- name: Copy band-static.conf file
   copy: src=band-static.conf dest=/etc/nginx/conf.d/band-static.conf
+
+- name: Copy band-admin.conf file
+  copy: src=band-admin.conf dest=/etc/nginx/conf.d/band-admin.conf
 
 - name: restart nginx
   service: name=nginx state=restarted

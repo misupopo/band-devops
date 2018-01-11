@@ -1,10 +1,10 @@
 
 - name: download nodebrew
   sudo: yes
-  command: wget git.io/nodebrew -P /var/tmp
+  shell: curl -L git.io/nodebrew | perl - setup
 
-- name: install nodebrew
-  command: perl /var/tmp/nodebrew setup
+#- name: install nodebrew
+#  command: perl /var/tmp/nodebrew setup
 
 - name: install node.js latest
   ignore_errors: True
