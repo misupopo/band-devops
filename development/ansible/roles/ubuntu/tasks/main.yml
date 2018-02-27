@@ -9,3 +9,6 @@
   with_items:
     - git
 
+- name: set timezone to Asia/Tokyo
+  timezone:
+    name: Asia/Tokyo
