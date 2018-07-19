@@ -1,0 +1,9 @@
+
+- name: Install Redis
+  apt: pkg={{item}} state=latest
+  with_items:
+    - redis-server
+
+- name: restart nginx
+  service: name=redis state=restarted
+
