@@ -18,7 +18,7 @@
   with_items:
     - build-essential
     - google-chrome-stable
-    - openjdk-9-jre
+    - openjdk-11-jre
 
 - name: Install xvfb and firefox
   apt: pkg={{item}} state=latest
