@@ -15,5 +15,8 @@
 - name: Copy band-admin.conf file
   copy: src=band-admin.conf dest=/etc/nginx/conf.d/band-admin.conf
 
+- name: Copy band-api.conf file
+  copy: src=band-api.conf dest=/etc/nginx/conf.d/band-api.conf
+
 - name: restart nginx
   service: name=nginx state=restarted
