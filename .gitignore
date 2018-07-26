@@ -3,3 +3,4 @@ hosts
 hosts_bk
 ubuntu.retry
 vagrant.retry
+*.log
